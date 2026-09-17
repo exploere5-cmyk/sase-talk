@@ -4,11 +4,14 @@ services:
     name: sase-talk-server
     runtime: node
     plan: free
+    region: singapore # 한국과 가장 가까운 리전
     rootDir: server
     buildCommand: npm install
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
+      - key: NODE_VERSION
+        value: "22"
       - key: CLIENT_ORIGIN
         sync: false # 예: https://sase-talk.vercel.app
       - key: SUPABASE_URL
