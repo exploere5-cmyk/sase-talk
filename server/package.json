@@ -1,0 +1,23 @@
+{
+  "name": "sase-talk-server",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "cleanup": "node scripts/cleanup.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.116.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "multer": "^2.4.0",
+    "nanoid": "^6.0.1",
+    "node-cron": "^4.6.0",
+    "socket.io": "^4.8.3"
+  }
+}

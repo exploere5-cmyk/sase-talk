@@ -1,0 +1,17 @@
+{
+  "name": "sase-talk",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c red,yellow \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm start -w server",
+    "cleanup": "npm run cleanup -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}

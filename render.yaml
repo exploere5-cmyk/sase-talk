@@ -1,0 +1,23 @@
+# Render Blueprint — 백엔드(Express + Socket.io)
+services:
+  - type: web
+    name: sase-talk-server
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: CLIENT_ORIGIN
+        sync: false # 예: https://sase-talk.vercel.app
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_BUCKET
+        value: attachments
+      - key: RETENTION_DAYS
+        value: "30"
+      - key: CLEANUP_TIMEZONE
+        value: Asia/Seoul
