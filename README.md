@@ -76,6 +76,14 @@ server/supabase/schema.sql
 
 ## 배포 (Phase 5)
 
+| 구분 | 주소 |
+|---|---|
+| 서비스 | https://sase-talk.vercel.app |
+| API 서버 | https://sase-talk-server.onrender.com (`/api/health`) |
+
+- 백엔드: `main`에 push하면 Render가 자동 재배포합니다.
+- 프론트: 현재 CLI로 배포합니다. `client` 폴더에서 `npx vercel deploy --prod` 실행. (Vercel 대시보드에서 Git 연결 + Root Directory `client`로 설정하면 push 시 자동 배포)
+
 **백엔드 → Render**: 저장소를 연결하면 `render.yaml`이 인식됩니다. `CLIENT_ORIGIN`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`를 입력합니다.
 
 **프론트 → Vercel**: Root Directory를 `client`로 지정하고 환경변수 `VITE_API_URL=https://<render 주소>`를 설정합니다. `client/vercel.json`이 `/room/:slug` 새로고침을 처리합니다.

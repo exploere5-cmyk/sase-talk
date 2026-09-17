@@ -782,9 +782,12 @@ form .btn--block {
   color: var(--white);
 }
 
+/* 고정 폭 썸네일 — 원본 크기가 레이아웃 폭에 영향을 주지 않고, 로딩 중에도 자리를 잡아둔다 */
 .att-image {
   display: block;
-  max-width: min(280px, 100%);
+  width: 280px;
+  max-width: 100%;
+  min-height: 120px;
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--gray-100);
@@ -792,7 +795,8 @@ form .btn--block {
 }
 .att-image img {
   display: block;
-  max-width: 100%;
+  width: 100%;
+  height: auto;
   max-height: 320px;
   object-fit: cover;
 }
